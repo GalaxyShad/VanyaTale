@@ -99,6 +99,8 @@ if (oItem != instance_place(x, y, objRollCard)) {
    audio_play_sound(snd_noise, 0, false);
 }
 
+var give_count = choose(1, 2, 3);
+
 var tstr = "";
 var tcol = c_yellow;
 
@@ -115,20 +117,22 @@ if (Spd &lt; 0) {
                break;
           case 1:
                objBattle.DefPowerTimer  = -30;
-               tstr = "Пониженная защиты"
+               tstr = "Пониженная защита"
                tcol = c_red;
                break;
           case 2:
-               scr_add_item(0);
-               tstr = "+ Мороженое"
+               for (var i = 0; i &lt; give_count; i++) 
+                   scr_add_item(0);
+               tstr = "+ Мороженое x" + string(give_count);
                break;
           case 3:
-               scr_add_item(1);
-               tstr = "+ Крылышки"
+               for (var i = 0; i &lt; give_count; i++) 
+                   scr_add_item(1);
+               tstr = "+ Крылышки x" + string(give_count);
                break;
           case 4:
                objBattle.DefPowerTimer  = 30;
-               tstr = "Повышенная защиты"
+               tstr = "Повышенная защита"
                tcol = c_green;
                break;
           case 5:
@@ -137,8 +141,9 @@ if (Spd &lt; 0) {
                tcol = c_green;
                break;
           case 6:
-               tstr = "+ Рамен";
-               scr_add_item(2);
+               for (var i = 0; i &lt; give_count; i++) 
+                   scr_add_item(2);
+               tstr = "+ Рамен x" + string(give_count);
                break;
        }
    }

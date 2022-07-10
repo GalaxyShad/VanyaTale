@@ -59,7 +59,7 @@ global.plrMode = 0;
 DefPowerTimer = 0;
 AtkPowerTimer = 0;
 
-global.enemyHpMax = 13200;
+global.enemyHpMax = 12200;
 //global.enemyHp = 50;
 
 global.enemyHp = global.enemyHpMax;

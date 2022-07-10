@@ -42,7 +42,7 @@
             <string>oBorder.Width = 370;
 oBorder.Height = 220;
 
-oBorder.y -= 40;
+oBorder.y -= 90;
 
 alarm[0] = 450;
 

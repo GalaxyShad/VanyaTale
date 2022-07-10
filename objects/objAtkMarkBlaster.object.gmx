@@ -76,7 +76,7 @@ var oBlaster = instance_create(oSoul.x + 150 * cos(degtorad(_ang)), oSoul.y + 15
 oBlaster.Angle = point_direction(oBlaster.x, oBlaster.y, oSoul.x, oSoul.y) + 90;
 //oBlaster.image_xscale = 2;
 
-alarm[1] = 25;
+alarm[1] = 27;
 </string>
           </argument>
         </arguments>

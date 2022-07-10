@@ -42,7 +42,7 @@
             <string>tick = 0;
 Scale = 0;
 
-Dmg = 40;
+Dmg = 25;
 
 DestroyAfterTurn = false;
 

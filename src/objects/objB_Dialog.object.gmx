@@ -73,7 +73,7 @@ if (!instance_exists(oText)) {
 }
 
 
-if (oText.isDone &amp;&amp; global.keyActionPressed) {
+if (oText.isDone &amp;&amp; mouse_check_button_pressed(mb_left)) {
    pos++;
    with oText instance_destroy();
    

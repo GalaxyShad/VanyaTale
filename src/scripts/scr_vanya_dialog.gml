@@ -130,7 +130,7 @@ if (global.enemyHp == 0) {
 }
 
 if (array_length_1d(_msg)) {
-    _dialog = instance_create(objB_Vanya.x+48, objB_Vanya.y - 40, objB_Dialog);
+    _dialog = instance_create(objB_Vanya.x-48, objB_Vanya.y, objB_Dialog);
     _dialog.msg = _msg;
     _dialog.emotion = _emo;
 }

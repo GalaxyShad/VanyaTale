@@ -26,10 +26,14 @@
           <argument>
             <kind>1</kind>
             <string>x = room_width / 2;
-y = 250 + 70;
+y = objB_Border.y;
 
 cursor_xsp = 4;
-cursor_x = x - 273 - 7;
+cursor_x = objB_Border.left;
+center = objB_Border.Width / 2;
+
+
+
 
 cursor_stop = false;
 
@@ -38,7 +42,7 @@ sfx_ended = false;
 
 oEnemyDmgr = 0;
 
-scale = 1;
+scale = objB_Border.Width / 575;
 image_xscale = 0;
 </string>
           </argument>
@@ -75,7 +79,7 @@ else
    
 cursor_x += cursor_xsp;
    
-multiplier = (280 - abs(x - cursor_x )) / 280;
+multiplier = (center - abs(x - cursor_x )) / center;
 
 if (oEnemyDmgr != 0 &amp;&amp; !instance_exists(oEnemyDmgr)) {
   scale = 0;
@@ -83,7 +87,7 @@ if (oEnemyDmgr != 0 &amp;&amp; !instance_exists(oEnemyDmgr)) {
      instance_create(x, y, objB_EnemyTurn); 
      instance_destroy();
   }
-} else if (oEnemyDmgr == 0 &amp;&amp; (global.keyActionPressed || cursor_x &gt; x + 280)) {
+} else if (oEnemyDmgr == 0 &amp;&amp; (mouse_check_button_pressed(mb_left) || cursor_x &gt; x + center)) {
    cursor_stop  = true;
    
    oEnemyDmgr = instance_create(x, y, objB_EnemyDamager);

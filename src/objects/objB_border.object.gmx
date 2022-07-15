@@ -26,12 +26,7 @@
           <argument>
             <kind>1</kind>
             <string>
-Width = 575;
-Height = 140;
-
-x = room_width / 2;
-y = 320;
-
+scr_battlebox_reset();
 
 
 THICK = 5;
@@ -72,7 +67,10 @@ bottom  = y + height / 2;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>var wDelta = Width  - width;
+            <string>if (Width &gt; global.scr_width_scaled - 32)
+   Width = global.scr_width_scaled - 32;
+
+var wDelta = Width  - width;
 var hDelta = Height - height;
 
 width  += min(max(wDelta, -wDelta / 2), wDelta / 2);

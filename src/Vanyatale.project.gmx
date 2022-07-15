@@ -44,6 +44,7 @@
     <sprite>sprites\sprParent</sprite>
     <sprite>sprites\sprBattleUiHp</sprite>
     <sprite>sprites\sprBattleButtons</sprite>
+    <sprite>sprites\sprBattleButMobile</sprite>
     <sprite>sprites\sprBattleVanyaHead</sprite>
     <sprite>sprites\sprBattleVanyaTop</sprite>
     <sprite>sprites\sprBattleVanyaBottom</sprite>
@@ -89,6 +90,7 @@
   <backgrounds name="background">
     <background>background\background0</background>
     <background>background\background1</background>
+    <background>background\background2</background>
   </backgrounds>
   <paths name="paths"/>
   <scripts name="scripts">
@@ -100,6 +102,10 @@
     <script>scripts\scr_save_game.gml</script>
     <script>scripts\scr_load_game.gml</script>
     <script>scripts\scr_snow_random.gml</script>
+    <script>scripts\scr_update_resolution.gml</script>
+    <script>scripts\scr_battle_menu_buttons_create.gml</script>
+    <script>scripts\scr_battle_menu_buttons_destroy.gml</script>
+    <script>scripts\scr_battlebox_reset.gml</script>
   </scripts>
   <fonts name="fonts">
     <font>fonts\fntB_UI</font>
@@ -198,6 +204,7 @@
         <object>objects\objB_MenuRoll</object>
         <object>objects\objTextSfx</object>
       </objects>
+      <object>objects\objMenuButton</object>
     </objects>
     <object>objects\objBattle</object>
     <object>objects\objB_Border</object>
@@ -216,11 +223,11 @@
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_init</room>
-    <room>rooms\rm_main_menu</room>
     <room>rooms\rm_battle</room>
     <room>rooms\rm_end_cutscene</room>
     <room>rooms\rm_end</room>
     <room>rooms\rm_game_over</room>
+    <room>rooms\rm_main_menu</room>
   </rooms>
   <help>
     <rtf>help.rtf</rtf>

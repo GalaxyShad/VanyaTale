@@ -2,8 +2,8 @@
 <object>
   <spriteName>sprController</spriteName>
   <solid>0</solid>
-  <visible>0</visible>
-  <depth>0</depth>
+  <visible>-1</visible>
+  <depth>-1215752192</depth>
   <persistent>-1</persistent>
   <parentName>&lt;undefined&gt;</parentName>
   <maskName>&lt;undefined&gt;</maskName>
@@ -40,6 +40,23 @@ global.en_x = 0;
 global.en_y = 0;
 
 global.try = 1;
+
+global.scr_width  = window_get_width();
+global.scr_height = window_get_height();
+
+scr_update_resolution();
+
+//global.scr_width_scaled = global.scr_width;
+//global.scr_height_scaled = global.scr_height;
+
+global.mouse_start_x = 0;
+global.mouse_start_y = 0;
+global.isJoystick = false;
+
+joy_timer = 0;
+
+mouse_shift_x = 0;
+mouse_shift_y = 0;
 
 scr_load_game();
 </string>
@@ -83,9 +100,168 @@ if keyboard_check_pressed(vk_f4)
         window_set_fullscreen(true);
     }
 }
+
+if keyboard_check_pressed(ord('1')) {
+   global.scr_width = 480;
+   global.scr_height = 854;
+
+   scr_update_resolution();
+
+} else if keyboard_check_pressed(ord('2')) {
+   global.scr_width = 640;
+   global.scr_height = 1136;
+   
+   scr_update_resolution();
+   
+
+} else if keyboard_check_pressed(ord('3')) {
+   global.scr_width = 750;
+   global.scr_height = 1334;
+   
+
+    scr_update_resolution();
+
+} else if keyboard_check_pressed(ord('4')) {
+   global.scr_width = 1170;
+   global.scr_height = 2532;
+   
+   
+   scr_update_resolution();
+   
+} 
+
+//global.mouse_start_x = 0;
+//global.mouse_start_y = 0;
+//global.isJoystick = false;
+
+
+keyboard_key_release(vk_left);
+keyboard_key_release(vk_right);
+keyboard_key_release(vk_up);
+keyboard_key_release(vk_down);
+keyboard_key_release(vk_enter);
+
+if (!global.isJoystick) {
+   if (mouse_check_button(mb_left)) {
+      global.mouse_start_x = mouse_x;
+      global.mouse_start_y = mouse_y;
+      global.isJoystick = true;
+      
+      if (joy_timer == 0) joy_timer  = 15;
+      else if (joy_timer &gt; 0) keyboard_key_press(vk_enter);
+   }
+} else {
+   if (!mouse_check_button(mb_left)) 
+      global.isJoystick = false;
+   else {
+      mouse_shift_x = mouse_x - global.mouse_start_x;
+      mouse_shift_y = mouse_y - global.mouse_start_y;
+      
+      var s = 12;
+      
+      if (mouse_shift_x &lt; -s)     keyboard_key_press(vk_left);
+      else if (mouse_shift_x &gt; s) keyboard_key_press(vk_right);
+      
+      if (mouse_shift_y &lt; -s)     keyboard_key_press(vk_up);
+      else if (mouse_shift_y &gt; s) keyboard_key_press(vk_down);
+   }
+}
+
+if joy_timer &gt; 0 joy_timer--;
+
+
+
+
+
+
+
+
+
 </string>
           </argument>
         </arguments>
+      </action>
+    </event>
+    <event eventtype="7" enumb="4">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>global.scr_width  = window_get_width();
+global.scr_height = window_get_height();
+
+scr_update_resolution();
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="8" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>//draw_set_font(fntMain);
+//draw_set_color(c_red);
+//draw_text(0, 0, string(global.scr_width) + " " + string(global.scr_height));
+//draw_text(0, 32, string(view_xport[0]) + " " + string(view_yport[0]));
+//draw_text(0, 64, global.scr_height / 854);
+
+//draw_text(0, 0, string(mouse_shift_x) + " " + string(mouse_shift_y));
+
+draw_set_color(c_white);
+
+if (global.isJoystick) {
+   draw_set_alpha(0.125);
+   draw_circle(global.mouse_start_x, global.mouse_start_y, 64, true);
+   draw_circle(global.mouse_start_x + clamp(mouse_shift_x, -64, 64), global.mouse_start_y + clamp(mouse_shift_y, -64, 64), 32, false);
+   draw_set_alpha(1.00);
+}
+
+
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="9" enumb="82">
+      <action>
+        <libid>1</libid>
+        <id>223</id>
+        <kind>0</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>0</useapplyto>
+        <exetype>1</exetype>
+        <functionname>action_current_room</functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
       </action>
     </event>
   </events>

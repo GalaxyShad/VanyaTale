@@ -126,8 +126,6 @@ if (place_meeting(x, y, oObstacle)) {
        (oObstacle.Type == 2 &amp;&amp; ((x - xprevious) == 0 &amp;&amp; (y - yprevious) == 0)) ||
         oObstacle.Type == 0)  {
            if (!inv) {
-              //if (global.plrHpKarma &gt; global.plrHp &amp;&amp; global.plrHp != 1)
-              //   global.plrHpKarma -= oObstacle.Dmg;
            
               global.plrHp -= oObstacle.Dmg / global.plrDef;
               inv = 15;

@@ -78,11 +78,7 @@ if (!inDialog &amp;&amp; !instance_exists(oAttack)) {
 
    with oSoul instance_destroy();
    with oBorder {
-        Width = 575;
-        Height = 140;
-        
-        x = room_width / 2;
-        y = 320;
+        scr_battlebox_reset();
    }
    with objBattle {
         menu = 0;

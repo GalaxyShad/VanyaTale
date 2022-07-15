@@ -47,7 +47,7 @@ scr_add_item(0);
 
 
 global.plrName = "fan of vanya";
-global.plrHpMax = 1;
+global.plrHpMax = 100;
 global.plrHp = global.plrHpMax;
 global.plrHpKarma = global.plrHpMax;
 
@@ -66,10 +66,12 @@ global.enemyHp = global.enemyHpMax;
 global.enemyDef = 30;
 
 
+scr_battle_menu_buttons_create();
+
 
 global.enemies[0] = "Ваня aka Кумир";
 
-
+//global.msg[0] = "* ilovebigasses228";
 global.msg[0] = "* Видя своего Кумира, вы наполняетесь ОПТИМИСТИЧНОСТЬЮ";
 global.msg[1] = "* Вы понимаете, что это была очень легкая атака";
 global.msg[2] = "* Вы поражаетесь навыкам кодинга Вани";
@@ -145,54 +147,52 @@ if (menu == MENU_MAIN &amp;&amp; !instance_exists(objB_EnemyTurn)) {
    if (!instance_exists(text)) {
       text = instance_create(56, 270, objText)
       
+      if (!instance_exists(buttons[0]) &amp;&amp; !instance_exists(buttons[1]) &amp;&amp; !instance_exists(buttons[2]) &amp;&amp; !instance_exists(buttons[3])) {
+         scr_battle_menu_buttons_create();
+      }
+      
       if (Progress &lt; array_length_1d(global.msg))
          curMsg = Progress;
          
       text.message = global.msg[curMsg];
+      text.maxWidth = global.scr_width_scaled - 150;
    }
    
 
-    if keyboard_check_pressed(vk_left) {
-       audio_play_sound(snd_squeak, 0, false);
-       menu_pos--;
-    } else if keyboard_check_pressed(vk_right) {
-       audio_play_sound(snd_squeak, 0, false);
-       menu_pos++;
-    }
-       
-    if menu_pos &lt; 0
-       menu_pos = 3;
-       
-    if menu_pos &gt; 3
-       menu_pos = 0;
-       
-       
-    if (global.keyActionPressed) {
-       audio_play_sound(snd_select, 0, false);
-       menu = menu_pos + 1;
-       switch (menu) {
-          case MENU_ADMIRE:
-               with text instance_destroy();
-               instance_create(x, y, objB_MenuEnemy);
-               break;
-          case MENU_CASE:
-               with text instance_destroy();
-               instance_create(border.x, border.y, objB_MenuRoll);
-               break;
-          case MENU_ITEM:
-               if (ds_list_size(global.items) &lt;= 0) {
-                  menu = 0;
-               } else {
-                   with text instance_destroy();
-                   instance_create(x, y, objB_MenuItems);
+    
+    for (var i = 0; i &lt; 3; i++) {
+        if (instance_exists(buttons[i])) {
+            if (buttons[i].IsClicked) {
+               audio_play_sound(snd_select, 0, false);
+        
+               menu = i+1;
+               
+               switch (menu) {
+                  case MENU_ADMIRE:
+                       with text instance_destroy();
+                       instance_create(x, y, objB_Admire);
+                       scr_battle_menu_buttons_destroy();
+                       break;
+                  case MENU_CASE:
+                       with text instance_destroy();
+                       instance_create(border.x, border.y, objB_MenuRoll);
+                       scr_battle_menu_buttons_destroy();
+                       break;
+                  case MENU_ITEM:
+                       if (ds_list_size(global.items) &lt;= 0) {
+                          menu = 0;
+                       } else {
+                           with text instance_destroy();
+                           instance_create(x, y, objB_MenuItems);
+                           scr_battle_menu_buttons_destroy();
+                       }
+                       break;
+                  default:
+                       menu = 0;
+                       break;
                }
-               break;
-          default:
-               menu = 0;
-               break;
-       }
-     
-       
+            }
+        }
     }
 }
 
@@ -222,23 +222,23 @@ if (global.plrHpKarma &gt; global.plrHp) {
 
 
 if DefPowerTimer == 0
-   global.plrDef = 1;
+   global.plrDef = 2;
 else if DefPowerTimer &gt; 0 &amp;&amp; global.tick % 30 == 0 &amp;&amp; instance_exists(objB_EnemyTurn) &amp;&amp; !instance_exists(objB_Dialog) {
    DefPowerTimer -= 1;
-   global.plrDef = 1.5;
+   global.plrDef = 3;
 } else if DefPowerTimer &lt; 0 &amp;&amp; global.tick % 30 == 0 &amp;&amp; instance_exists(objB_EnemyTurn) &amp;&amp; !instance_exists(objB_Dialog) {
    DefPowerTimer += 1;
    global.plrDef = 0.5;
 }
    
 if AtkPowerTimer == 0
-   global.plrAtk = 1000;
+   global.plrAtk = 1300;
 else if AtkPowerTimer &gt; 0 &amp;&amp; global.tick % 30 == 0 &amp;&amp; instance_exists(objB_EnemyTurn) &amp;&amp; !instance_exists(objB_Dialog) {
    AtkPowerTimer -= 1;
-   global.plrAtk = 1300;
+   global.plrAtk = 1600;
 } else if AtkPowerTimer &lt; 0 &amp;&amp; global.tick % 30 == 0 &amp;&amp; instance_exists(objB_EnemyTurn) &amp;&amp; !instance_exists(objB_Dialog) {
    AtkPowerTimer += 1;
-   global.plrAtk = 800;
+   global.plrAtk = 1000;
 }
 
 </string>
@@ -263,9 +263,11 @@ else if AtkPowerTimer &gt; 0 &amp;&amp; global.tick % 30 == 0 &amp;&amp; instanc
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>
+            <string>//draw_text(320, 0, menu);
 
 draw_set_font(fntB_UI);
+
+
 
 if (DefPowerTimer &gt; 0) draw_set_color(c_lime);
 else draw_set_color(c_red);
@@ -290,50 +292,34 @@ draw_set_colour(c_white);
 
 
 
-var hud_x = 34;
-var hud_y = 398;
-var hp_text = string(floor(global.plrHpKarma)) + " / " + string(global.plrHpMax);
+var hud_x = 16;
+var hud_y = 16;
+var hp_text = string(floor(global.plrHpKarma)) + " /#" + string(global.plrHpMax);
 
-draw_text(hud_x,  hud_y, global.plrName);
-hud_x += string_width(global.plrName) + 24;
+//draw_text(hud_x,  hud_y, global.plrName);
+//hud_x += string_width(global.plrName) + 24;
 
 draw_sprite(sprBattleUiHp, 0, hud_x, hud_y);
-hud_x += 32;
+hud_y += 32;
 
 draw_set_colour(c_red);
-draw_rectangle(hud_x, hud_y, hud_x+global.plrHpMax, hud_y+21, false);
+draw_rectangle(hud_x, hud_y, hud_x+21, hud_y+global.plrHpMax, false);
 draw_set_colour(c_fuchsia);
-draw_rectangle(hud_x, hud_y, hud_x+global.plrHpKarma, hud_y+21, false);
+draw_rectangle(hud_x, hud_y, hud_x+21, hud_y+global.plrHpKarma, false);
 draw_set_colour(c_yellow);
-draw_rectangle(hud_x, hud_y, hud_x+global.plrHp, hud_y+21, false);
+draw_rectangle(hud_x, hud_y, hud_x+21, hud_y+global.plrHp, false);
 draw_set_colour(c_white);
-hud_x += global.plrHpMax + 16;
+hud_y += global.plrHpMax + 16;
 
 if (floor(global.plrHpKarma) != global.plrHp) draw_set_color(c_fuchsia);
 draw_text(hud_x, hud_y, hp_text);
 
 
-hud_x += string_width(hp_text) + 18;
+hud_y += 16;
 
-draw_set_colour(c_white);
-draw_text(hud_x, hud_y, "try: " + string(global.try));
+//draw_set_colour(c_white);
+//draw_text(hud_x, hud_y, "try: " + string(global.try));
 
-
-draw_sprite(sprBattleButtons, 0 + 4 * (menu_pos == 0 &amp;&amp; menu == MENU_MAIN), 33,  431);
-draw_sprite(sprBattleButtons, 1 + 4 * (menu_pos == 1 &amp;&amp; menu == MENU_MAIN), 186, 431);
-draw_sprite(sprBattleButtons, 2 + 4 * (menu_pos == 2 &amp;&amp; menu == MENU_MAIN), 346, 431);
-draw_sprite(sprBattleButtons, 3 + 4 * (menu_pos == 3 &amp;&amp; menu == MENU_MAIN), 501, 431);
-
-if (menu == MENU_MAIN) {
-    var soul_pos_x;
-    switch (menu_pos) {
-           case 0: soul_pos_x = 33; break;
-           case 1: soul_pos_x = 186; break;
-           case 2: soul_pos_x = 346; break;
-           case 3: soul_pos_x = 501; break;
-    }
-    draw_sprite(sprB_Soul, 0, soul_pos_x+16, 431+21);
-}
 
 draw_set_colour(c_white);
 

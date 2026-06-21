@@ -1,0 +1,173 @@
+function __global_object_depths() {
+	// Initialise the global array that allows the lookup of the depth of a given object
+	// GM2.0 does not have a depth on objects so on import from 1.x a global array is created
+	// NOTE: MacroExpansion is used to insert the array initialisation at import time
+	gml_pragma( "global", "__global_object_depths()");
+
+	// insert the generated arrays here
+	global.__objectDepths[0] = 0; // objAllController
+	global.__objectDepths[1] = -10000; // objText
+	global.__objectDepths[2] = -5000; // objB_Dialog
+	global.__objectDepths[3] = 0; // parHurtable
+	global.__objectDepths[4] = 0; // parHurtableBlue
+	global.__objectDepths[5] = 0; // parHurtableOrange
+	global.__objectDepths[6] = 0; // parAttack
+	global.__objectDepths[7] = 0; // objAtkTest
+	global.__objectDepths[8] = 0; // objAtkMotorcycle
+	global.__objectDepths[9] = 0; // objAtkSnow
+	global.__objectDepths[10] = 0; // objAtkChulok
+	global.__objectDepths[11] = 0; // objAtkMarkBlaster
+	global.__objectDepths[12] = 0; // objAtkMarkBlaster2
+	global.__objectDepths[13] = 0; // objAtkMarkBlaster3
+	global.__objectDepths[14] = 0; // objAtkDzudo
+	global.__objectDepths[15] = 0; // objAtkKucha
+	global.__objectDepths[16] = 0; // objAtkSpongebob
+	global.__objectDepths[17] = 0; // objAtkWriting
+	global.__objectDepths[18] = 0; // objAtkBone1
+	global.__objectDepths[19] = 0; // objAtkBone2
+	global.__objectDepths[20] = 0; // objAtkBoneSin
+	global.__objectDepths[21] = 0; // objAtkBone3
+	global.__objectDepths[22] = -8; // objSpongebob
+	global.__objectDepths[23] = -20; // objFightLetter
+	global.__objectDepths[24] = -1000; // objPunch
+	global.__objectDepths[25] = -10000; // objPunchEyeSfx
+	global.__objectDepths[26] = -1; // objBone
+	global.__objectDepths[27] = -1; // objBoneMain
+	global.__objectDepths[28] = -1; // objBoneEnd
+	global.__objectDepths[29] = -8; // objWord1
+	global.__objectDepths[30] = -8; // objWord2
+	global.__objectDepths[31] = -8; // objWord3
+	global.__objectDepths[32] = -8; // objWord4
+	global.__objectDepths[33] = -8; // objWord5
+	global.__objectDepths[34] = -8; // objWord6
+	global.__objectDepths[35] = -8; // objWord7
+	global.__objectDepths[36] = -8; // objWord8
+	global.__objectDepths[37] = -8; // objWord9
+	global.__objectDepths[38] = 0; // objChulok
+	global.__objectDepths[39] = -1; // objChulok2
+	global.__objectDepths[40] = 0; // parMotorcyclePart
+	global.__objectDepths[41] = 0; // objMotorcycleWheel
+	global.__objectDepths[42] = -45; // objMotorCycleExplosion
+	global.__objectDepths[43] = 0; // objMotorcycle
+	global.__objectDepths[44] = 0; // objMotorcycleMain
+	global.__objectDepths[45] = -8; // objSnow
+	global.__objectDepths[46] = 0; // objSnowFalling
+	global.__objectDepths[47] = -10000; // objMarkBlaster
+	global.__objectDepths[48] = -10000; // objMarkBlasterTrail
+	global.__objectDepths[49] = -1000; // objTestBall
+	global.__objectDepths[50] = -1000000000; // objSoulGm
+	global.__objectDepths[51] = -1000000000; // objSoulGmSfx
+	global.__objectDepths[52] = -10000; // objDsYouDied
+	global.__objectDepths[53] = -10; // objB_MenuEnemy
+	global.__objectDepths[54] = -10; // objB_MenuItems
+	global.__objectDepths[55] = 0; // objB_Admire
+	global.__objectDepths[56] = -200; // objB_EnemyDamager
+	global.__objectDepths[57] = -100000; // objB_DmgDisplay
+	global.__objectDepths[58] = 0; // objRollCard
+	global.__objectDepths[59] = -100; // objB_MenuRoll
+	global.__objectDepths[60] = -1000; // objTextSfx
+	global.__objectDepths[61] = -100; // objBattle
+	global.__objectDepths[62] = -3; // objB_Border
+	global.__objectDepths[63] = -30; // objB_Soul
+	global.__objectDepths[64] = -5; // objB_Vanya
+	global.__objectDepths[65] = 0; // objB_EnemyTurn
+	global.__objectDepths[66] = -1410065408; // objFadeIn
+	global.__objectDepths[67] = -1410065408; // objFadeOut
+	global.__objectDepths[68] = 0; // objVanyaCut
+	global.__objectDepths[69] = -1000; // object70
+	global.__objectDepths[70] = -100000; // objCutsceneSfx
+	global.__objectDepths[71] = 0; // objCutscene
+	global.__objectDepths[72] = 0; // objFakeSoul
+	global.__objectDepths[73] = 0; // objEnterToMenu
+	global.__objectDepths[74] = 0; // objMainMenu
+
+
+	global.__objectNames[0] = "objAllController";
+	global.__objectNames[1] = "objText";
+	global.__objectNames[2] = "objB_Dialog";
+	global.__objectNames[3] = "parHurtable";
+	global.__objectNames[4] = "parHurtableBlue";
+	global.__objectNames[5] = "parHurtableOrange";
+	global.__objectNames[6] = "parAttack";
+	global.__objectNames[7] = "objAtkTest";
+	global.__objectNames[8] = "objAtkMotorcycle";
+	global.__objectNames[9] = "objAtkSnow";
+	global.__objectNames[10] = "objAtkChulok";
+	global.__objectNames[11] = "objAtkMarkBlaster";
+	global.__objectNames[12] = "objAtkMarkBlaster2";
+	global.__objectNames[13] = "objAtkMarkBlaster3";
+	global.__objectNames[14] = "objAtkDzudo";
+	global.__objectNames[15] = "objAtkKucha";
+	global.__objectNames[16] = "objAtkSpongebob";
+	global.__objectNames[17] = "objAtkWriting";
+	global.__objectNames[18] = "objAtkBone1";
+	global.__objectNames[19] = "objAtkBone2";
+	global.__objectNames[20] = "objAtkBoneSin";
+	global.__objectNames[21] = "objAtkBone3";
+	global.__objectNames[22] = "objSpongebob";
+	global.__objectNames[23] = "objFightLetter";
+	global.__objectNames[24] = "objPunch";
+	global.__objectNames[25] = "objPunchEyeSfx";
+	global.__objectNames[26] = "objBone";
+	global.__objectNames[27] = "objBoneMain";
+	global.__objectNames[28] = "objBoneEnd";
+	global.__objectNames[29] = "objWord1";
+	global.__objectNames[30] = "objWord2";
+	global.__objectNames[31] = "objWord3";
+	global.__objectNames[32] = "objWord4";
+	global.__objectNames[33] = "objWord5";
+	global.__objectNames[34] = "objWord6";
+	global.__objectNames[35] = "objWord7";
+	global.__objectNames[36] = "objWord8";
+	global.__objectNames[37] = "objWord9";
+	global.__objectNames[38] = "objChulok";
+	global.__objectNames[39] = "objChulok2";
+	global.__objectNames[40] = "parMotorcyclePart";
+	global.__objectNames[41] = "objMotorcycleWheel";
+	global.__objectNames[42] = "objMotorCycleExplosion";
+	global.__objectNames[43] = "objMotorcycle";
+	global.__objectNames[44] = "objMotorcycleMain";
+	global.__objectNames[45] = "objSnow";
+	global.__objectNames[46] = "objSnowFalling";
+	global.__objectNames[47] = "objMarkBlaster";
+	global.__objectNames[48] = "objMarkBlasterTrail";
+	global.__objectNames[49] = "objTestBall";
+	global.__objectNames[50] = "objSoulGm";
+	global.__objectNames[51] = "objSoulGmSfx";
+	global.__objectNames[52] = "objDsYouDied";
+	global.__objectNames[53] = "objB_MenuEnemy";
+	global.__objectNames[54] = "objB_MenuItems";
+	global.__objectNames[55] = "objB_Admire";
+	global.__objectNames[56] = "objB_EnemyDamager";
+	global.__objectNames[57] = "objB_DmgDisplay";
+	global.__objectNames[58] = "objRollCard";
+	global.__objectNames[59] = "objB_MenuRoll";
+	global.__objectNames[60] = "objTextSfx";
+	global.__objectNames[61] = "objBattle";
+	global.__objectNames[62] = "objB_Border";
+	global.__objectNames[63] = "objB_Soul";
+	global.__objectNames[64] = "objB_Vanya";
+	global.__objectNames[65] = "objB_EnemyTurn";
+	global.__objectNames[66] = "objFadeIn";
+	global.__objectNames[67] = "objFadeOut";
+	global.__objectNames[68] = "objVanyaCut";
+	global.__objectNames[69] = "object70";
+	global.__objectNames[70] = "objCutsceneSfx";
+	global.__objectNames[71] = "objCutscene";
+	global.__objectNames[72] = "objFakeSoul";
+	global.__objectNames[73] = "objEnterToMenu";
+	global.__objectNames[74] = "objMainMenu";
+
+
+	// create another array that has the correct entries
+	var len = array_length_1d(global.__objectDepths);
+	global.__objectID2Depth = [];
+	for( var i=0; i<len; ++i ) {
+		var objID = asset_get_index( global.__objectNames[i] );
+		if (objID >= 0) {
+			global.__objectID2Depth[ objID ] = global.__objectDepths[i];
+		} // end if
+	} // end for
+
+
+}

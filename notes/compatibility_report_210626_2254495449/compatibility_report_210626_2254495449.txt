@@ -1,0 +1,82 @@
+Converting GML script: X:\workspace\gms\Vanyatale.gmx\src\mvc\scripts\scr_global_vars\scr_global_vars.gml
+Converted builtin - line 3: view_wview[0] -> __view_get( e__VW.WView, 0 )
+Converted builtin - line 4: view_hview[0] -> __view_get( e__VW.HView, 0 )
+
+GameMaker Studio 1 font texture has been backed up at X:\workspace\gms\Vanyatale.gmx\src\mvc\fonts\fntB_UI\fntB_UI.gms1.png
+GameMaker Studio 1 font texture has been backed up at X:\workspace\gms\Vanyatale.gmx\src\mvc\fonts\fntMain\fntMain.gms1.png
+GameMaker Studio 1 font texture has been backed up at X:\workspace\gms\Vanyatale.gmx\src\mvc\fonts\fntSans\fntSans.gms1.png
+GameMaker Studio 1 font texture has been backed up at X:\workspace\gms\Vanyatale.gmx\src\mvc\fonts\fntTimesNewRoman\fntTimesNewRoman.gms1.png
+Converting GML script: X:\workspace\gms\Vanyatale.gmx\src\mvc\objects\objAllController\Step_0.gml
+String not found: ConversionLog_ConvertedString 1 'Z' "Z"
+String not found: ConversionLog_ConvertedString 2 'X' "X"
+String not found: ConversionLog_ConvertedString 4 'Z' "Z"
+String not found: ConversionLog_ConvertedString 5 'X' "X"
+
+Converting GML script: X:\workspace\gms\Vanyatale.gmx\src\mvc\objects\objText\Alarm_0.gml
+String not found: ConversionLog_ConvertedString 6 ' ' " "
+String not found: ConversionLog_ConvertedString 6 '*' "*"
+String not found: ConversionLog_ConvertedString 10 '/' "/"
+String not found: ConversionLog_ConvertedString 20 ',' ","
+String not found: ConversionLog_ConvertedString 20 '.' "."
+String not found: ConversionLog_ConvertedString 20 '?' "?"
+String not found: ConversionLog_ConvertedString 20 '!' "!"
+
+Converting GML script: X:\workspace\gms\Vanyatale.gmx\src\mvc\objects\objText\Draw_0.gml
+String not found: ConversionLog_ConvertedString 13 '/' "/"
+String not found: ConversionLog_ConvertedString 15 'y' "y"
+String not found: ConversionLog_ConvertedString 16 'g' "g"
+String not found: ConversionLog_ConvertedString 17 'b' "b"
+String not found: ConversionLog_ConvertedString 18 'r' "r"
+String not found: ConversionLog_ConvertedString 23 ' ' " "
+String not found: ConversionLog_ConvertedString 27 ' ' " "
+String not found: ConversionLog_ConvertedString 27 '#' "#"
+String not found: ConversionLog_ConvertedString 37 '*' "*"
+
+Converting GML script: X:\workspace\gms\Vanyatale.gmx\src\mvc\objects\objFightLetter\Create_0.gml
+String not found: ConversionLog_ConvertedString 6 'A' "A"
+
+Missing audiogroup for sound: 'snd_squeak' - setting to default audio group
+Missing audiogroup for sound: 'snd_laz' - setting to default audio group
+Missing audiogroup for sound: 'snd_text' - setting to default audio group
+Missing audiogroup for sound: 'snd_segapower' - setting to default audio group
+Missing audiogroup for sound: 'snd_heal' - setting to default audio group
+Missing audiogroup for sound: 'snd_damage' - setting to default audio group
+Missing audiogroup for sound: 'snd_rainbowbeam' - setting to default audio group
+Missing audiogroup for sound: 'sound10_snd_break2' - setting to default audio group
+Missing audiogroup for sound: 'mus_menu' - setting to default audio group
+Missing audiogroup for sound: 'snd_hurt' - setting to default audio group
+Missing audiogroup for sound: 'snd_select' - setting to default audio group
+Missing audiogroup for sound: 'snd_eyeflash' - setting to default audio group
+Missing audiogroup for sound: 'snd_break1' - setting to default audio group
+Missing audiogroup for sound: 'snd_text_battle' - setting to default audio group
+Missing audiogroup for sound: 'musBattleTemp' - setting to default audio group
+Missing audiogroup for sound: 'snd_txtsans' - setting to default audio group
+Missing audiogroup for sound: 'snd_mark' - setting to default audio group
+Missing audiogroup for sound: 'snd_block2' - setting to default audio group
+Missing audiogroup for sound: 'sndKey' - setting to default audio group
+Missing audiogroup for sound: 'sndDs' - setting to default audio group
+Missing audiogroup for sound: 'snd_lithit' - setting to default audio group
+Missing audiogroup for sound: 'snd_chug' - setting to default audio group
+Missing audiogroup for sound: 'snd_bombsplosion' - setting to default audio group
+Missing audiogroup for sound: 'snd_gigapunch' - setting to default audio group
+Missing audiogroup for sound: 'snd_arrow' - setting to default audio group
+Missing audiogroup for sound: 'snd_bell' - setting to default audio group
+Missing audiogroup for sound: 'snd_noise' - setting to default audio group
+Missing audiogroup for sound: 'snd_buyitem' - setting to default audio group
+Missing audiogroup for sound: 'sfx_frypan' - setting to default audio group
+Missing audiogroup for sound: 'mus_storm' - setting to default audio group
+Game speed set to 30
+Added compatibility script 'action\action_another_room.gml'
+Added compatibility script 'action\action_end_sound.gml'
+Added compatibility script 'action\action_inherited.gml'
+Added compatibility script 'action\action_kill_object.gml'
+Added compatibility script 'action\action_move.gml'
+Added compatibility script 'action\action_sound.gml'
+Added compatibility script 'action\action_sprite_set.gml'
+Added compatibility script 'instance\instance_create.gml'
+Added compatibility script 'object\object_get_depth.gml'
+Added compatibility script 'view\__view_get.gml'
+Added compatibility script 'action\__init_action.gml'
+Added compatibility script 'view\__init_view.gml'
+Added compatibility script '__init_global.gml'
+Added compatibility script '__global_object_depths.gml'

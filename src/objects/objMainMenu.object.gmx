@@ -62,9 +62,9 @@ audio_play_sound(mus_menu, 0, true);
 }
    
 if (pos &lt; 0)
-   pos = 3;
+   pos = 4;
    
-if (pos &gt; 3)
+if (pos &gt; 4)
    pos = 0;
    
 if (pos == 1) {
@@ -98,7 +98,8 @@ if (global.keyActionPressed) {
    audio_play_sound(snd_select, 0, false);
 
    if (pos == 0) room_goto_next();
-   else if (pos == 3) game_end();
+   else if (pos == 3) room_goto(rm_sound_test);
+   else if (pos == 4) game_end();
 }
 </string>
           </argument>
@@ -137,7 +138,10 @@ if (pos == 2) draw_set_color(c_yellow); else draw_set_color(c_white);
 draw_text(x, y+64, "Полный экран: " + string(window_get_fullscreen()));
 
 if (pos == 3) draw_set_color(c_yellow); else draw_set_color(c_white);
-draw_text(x, y+96, "Выход");
+draw_text(x, y+96, "Sound Test");
+
+if (pos == 4) draw_set_color(c_yellow); else draw_set_color(c_white);
+draw_text(x, y+96+32, "Выход");
 
 draw_set_halign(fa_left);
 

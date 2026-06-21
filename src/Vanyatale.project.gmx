@@ -13,19 +13,18 @@
     <sound>sound\snd_damage</sound>
     <sound>sound\snd_rainbowbeam</sound>
     <sound>sound\sound10_snd_break2</sound>
-    <sound>sound\mus_menu</sound>
     <sound>sound\snd_hurt</sound>
     <sound>sound\snd_select</sound>
     <sound>sound\snd_eyeflash</sound>
     <sound>sound\snd_break1</sound>
     <sound>sound\snd_text_battle</sound>
-    <sound>sound\musBattleTemp</sound>
     <sound>sound\snd_txtsans</sound>
     <sound>sound\snd_mark</sound>
     <sound>sound\snd_block2</sound>
     <sound>sound\sndKey</sound>
     <sound>sound\sndDs</sound>
     <sound>sound\snd_lithit</sound>
+    <sound>sound\T3L3PH0N3_CA77</sound>
     <sound>sound\snd_chug</sound>
     <sound>sound\snd_bombsplosion</sound>
     <sound>sound\snd_gigapunch</sound>
@@ -34,7 +33,10 @@
     <sound>sound\snd_noise</sound>
     <sound>sound\snd_buyitem</sound>
     <sound>sound\sfx_frypan</sound>
+    <sound>sound\mus_menu</sound>
+    <sound>sound\musBattleTemp</sound>
     <sound>sound\mus_storm</sound>
+    <sound>sound\mus_creepy</sound>
   </sounds>
   <sprites name="sprites">
     <sprite>sprites\sprB_Soul</sprite>
@@ -89,6 +91,14 @@
   <backgrounds name="background">
     <background>background\background0</background>
     <background>background\background1</background>
+    <background>background\background2</background>
+    <background>background\background3</background>
+    <background>background\background5</background>
+    <background>background\background4</background>
+    <background>background\background6</background>
+    <background>background\background7</background>
+    <background>background\background8</background>
+    <background>background\background9</background>
   </backgrounds>
   <paths name="paths"/>
   <scripts name="scripts">
@@ -213,6 +223,7 @@
     <object>objects\objFakeSoul</object>
     <object>objects\objEnterToMenu</object>
     <object>objects\objMainMenu</object>
+    <object>objects\objSoundTest</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_init</room>
@@ -221,6 +232,8 @@
     <room>rooms\rm_end_cutscene</room>
     <room>rooms\rm_end</room>
     <room>rooms\rm_game_over</room>
+    <room>rooms\rm_sound_test</room>
+    <room>rooms\rm_creepy</room>
   </rooms>
   <help>
     <rtf>help.rtf</rtf>

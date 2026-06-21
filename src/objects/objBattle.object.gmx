@@ -47,7 +47,7 @@ scr_add_item(0);
 
 
 global.plrName = "fan of vanya";
-global.plrHpMax = 1;
+global.plrHpMax = 100;
 global.plrHp = global.plrHpMax;
 global.plrHpKarma = global.plrHpMax;
 
@@ -59,8 +59,8 @@ global.plrMode = 0;
 DefPowerTimer = 0;
 AtkPowerTimer = 0;
 
-global.enemyHpMax = 14200;
-//global.enemyHp = 50;
+global.enemyHpMax = 12000;
+//global.enemyHpMax = 50;
 
 global.enemyHp = global.enemyHpMax;
 global.enemyDef = 30;
@@ -70,20 +70,20 @@ global.enemyDef = 30;
 global.enemies[0] = "Ваня aka Кумир";
 
 
-global.msg[0] = "* Видя своего Кумира, вы наполняетесь ОПТИМИСТИЧНОСТЬЮ";
+global.msg[0] = "* Loading Dialogue... ERR!! Index out of range!";
 global.msg[1] = "* Вы понимаете, что это была очень легкая атака";
 global.msg[2] = "* Вы поражаетесь навыкам кодинга Вани";
-global.msg[3] = "* Помните, мотоциклы = Фарш";
-global.msg[4] = "* Куча дел не имеет отношения к компании Куча дел";
+global.msg[3] = "* Fqp'v gxgp nqqm hqt vjg ЫГЗУК_ЫУСКУЕ_СЩВУ!";
+global.msg[4] = "* Загляните как нить на мой канал :D#www.youtube.com/@GalaxyShad102";
 global.msg[5] = "* Крик марк бластеров наполняет вас ОПТИМИСТИЧНОСТЬЮ";
 global.msg[8] = "* У Вани 500 знаков в минуту, а у Вас?";
-global.msg[7] = "* Забавный факт. У Вани на 1 балл ЕГЭ больше чем у Вадика.";
+global.msg[7] = "* Loading Dialogue... ERR!! Index out of range!";
 global.msg[6] = "* Как-то раз, на конференции, Ваня сделал презу во время выступления других участников";
 global.msg[9] = "* Вы вообще читаете эти#сообщения?";
 global.msg[10] = "* Перед вами Senior Apex#Nagibator.";
 global.msg[11] = "* Как круто вы играете O_O";
 global.msg[12] = "* Забудьте, что я сказал на прошлом ходу";
-global.msg[13] = "* Как дела?";
+global.msg[13] = "* Waiting for call...";
 global.msg[14] = "* Фразы кончаются, дальше будет реклама.";
 global.msg[15] = "* Также попробуйте Sonic 1 PC Recreation";
 global.msg[16] = "* Также попробуйте Mark The Game";
@@ -137,6 +137,8 @@ menu_pos = 0;
           <argument>
             <kind>1</kind>
             <string>
+var super_secret_code = "SUPER_SECRET_CODE!!! 05 0A 12 12 0F 18";
+
 if (global.enemyHp &lt; 0)
    global.enemyHp = 0;
 
@@ -336,6 +338,8 @@ if (menu == MENU_MAIN) {
 }
 
 draw_set_colour(c_white);
+
+
 
 </string>
           </argument>

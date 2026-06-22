@@ -1,0 +1,11 @@
+{
+  "overrides": [
+    {
+      "files": "*.gml",
+      "options": {
+        "parser": "babel",
+        "tabWidth": 4
+      }
+    }
+  ]
+}

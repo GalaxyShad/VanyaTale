@@ -1,4 +1,7 @@
 
+if (keyboard_check_pressed(vk_escape))
+   room_goto(rm_main_menu)
+
 if (global.enemyHp < 0)
    global.enemyHp = 0;
 

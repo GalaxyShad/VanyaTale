@@ -3,8 +3,7 @@ function scr_save_game() {
 
 	file_text_write_real(_save_file, global.try);
 	file_text_write_real(_save_file, audio_get_master_gain(0));
+	file_text_write_string(_save_file, global.scr_i18n_lang_get())
 
 	file_text_close(_save_file);
-
-
 }

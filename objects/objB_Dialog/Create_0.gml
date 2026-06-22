@@ -1,4 +1,4 @@
-msg[0] = "Ноу текст, мазафака";
+msg[0] = "[ERR No text]";
 
 oText = noone;
 pos = 0;

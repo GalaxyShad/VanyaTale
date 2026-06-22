@@ -14,5 +14,8 @@ global.en_y = 0;
 
 global.try = 1;
 
+audio_master_gain(0.20)
+
+scr_i18n_init();
 scr_load_game();
 

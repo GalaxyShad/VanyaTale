@@ -18,9 +18,8 @@ scr_add_item(0);
 scr_add_item(0);
 scr_add_item(0);
 
-
-global.plrName = "fan of vanya";
-global.plrHpMax = 1;
+global.plrName = global.i18n.playerName;
+global.plrHpMax = 100;
 global.plrHp = global.plrHpMax;
 global.plrHpKarma = global.plrHpMax;
 
@@ -38,32 +37,28 @@ global.enemyHpMax = 14200;
 global.enemyHp = global.enemyHpMax;
 global.enemyDef = 30;
 
+global.enemies[0] = global.i18n.battleEnemyName;
 
-
-global.enemies[0] = "Ваня aka Кумир";
-
-
-global.msg[0] = "* Видя своего Кумира, вы наполняетесь ОПТИМИСТИЧНОСТЬЮ";
-global.msg[1] = "* Вы понимаете, что это была очень легкая атака";
-global.msg[2] = "* Вы поражаетесь навыкам кодинга Вани";
-global.msg[3] = "* Помните, мотоциклы = Фарш";
-global.msg[4] = "* Куча дел не имеет отношения к компании Куча дел";
-global.msg[5] = "* Крик марк бластеров наполняет вас ОПТИМИСТИЧНОСТЬЮ";
-global.msg[8] = "* У Вани 500 знаков в минуту, а у Вас?";
-global.msg[7] = "* Забавный факт. У Вани на 1 балл ЕГЭ больше чем у Вадика.";
-global.msg[6] = "* Как-то раз, на конференции, Ваня сделал презу во время выступления других участников";
-global.msg[9] = "* Вы вообще читаете эти#сообщения?";
-global.msg[10] = "* Перед вами Senior Apex#Nagibator.";
-global.msg[11] = "* Как круто вы играете O_O";
-global.msg[12] = "* Забудьте, что я сказал на прошлом ходу";
-global.msg[13] = "* Как дела?";
-global.msg[14] = "* Фразы кончаются, дальше будет реклама.";
-global.msg[15] = "* Также попробуйте Sonic 1 PC Recreation";
-global.msg[16] = "* Также попробуйте Mark The Game";
-global.msg[17] = "* Также попробуйте Zuma Deluxe HD";
-global.msg[18] = "* www.youtube.com/watch?v=dQw4w9WgXcQ";
-global.msg[19] = "* Просто продолжай восхищаться";
-
+global.msg[0] = global.i18n.battleBox.msg0;
+global.msg[1] = global.i18n.battleBox.msg1;
+global.msg[2] = global.i18n.battleBox.msg2;
+global.msg[3] = global.i18n.battleBox.msg3;
+global.msg[4] = global.i18n.battleBox.msg4;
+global.msg[5] = global.i18n.battleBox.msg5;
+global.msg[8] = global.i18n.battleBox.msg8;
+global.msg[7] = global.i18n.battleBox.msg7;
+global.msg[6] = global.i18n.battleBox.msg6;
+global.msg[9] = global.i18n.battleBox.msg9;
+global.msg[10] = global.i18n.battleBox.msg10;
+global.msg[11] = global.i18n.battleBox.msg11;
+global.msg[12] = global.i18n.battleBox.msg12;
+global.msg[13] = global.i18n.battleBox.msg13;
+global.msg[14] = global.i18n.battleBox.msg14;
+global.msg[15] = global.i18n.battleBox.msg15;
+global.msg[16] = global.i18n.battleBox.msg16;
+global.msg[17] = global.i18n.battleBox.msg17;
+global.msg[18] = global.i18n.battleBox.msg18;
+global.msg[19] = global.i18n.battleBox.msg19;
 
 cur_msg = 0;
 

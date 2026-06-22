@@ -1,14 +1,11 @@
 function scr_load_game() {
-	if (!file_exists("save.sav")) 
-	   return 0;
+    if (!file_exists("save.sav")) return 0;
 
+    var _save_file = file_text_open_read("save.sav");
 
-	var _save_file = file_text_open_read("save.sav");
+    global.try = file_text_read_real(_save_file);
+    audio_master_gain(file_text_read_real(_save_file));
+    scr_i18n_lang_set(string_trim(file_text_read_string(_save_file)));
 
-	global.try = file_text_read_real(_save_file);
-	audio_master_gain(file_text_read_real(_save_file));
-
-	file_text_close(_save_file);
-
-
+    file_text_close(_save_file);
 }

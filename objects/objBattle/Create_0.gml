@@ -19,7 +19,7 @@ scr_add_item(0);
 scr_add_item(0);
 
 global.plrName = global.i18n.playerName;
-global.plrHpMax = 100;
+global.plrHpMax = (!global.no_hit_mode) ? 100 : 1;
 global.plrHp = global.plrHpMax;
 global.plrHpKarma = global.plrHpMax;
 
@@ -31,7 +31,7 @@ global.plrMode = 0;
 DefPowerTimer = 0;
 AtkPowerTimer = 0;
 
-global.enemyHpMax = 14200;
+global.enemyHpMax = 12000;
 //global.enemyHp = 50;
 
 global.enemyHp = global.enemyHpMax;

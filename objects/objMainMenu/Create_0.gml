@@ -1,5 +1,5 @@
 pos = 0;
-maxPos = 4;
+maxPos = 5;
 
 x = 320;
 

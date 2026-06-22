@@ -13,6 +13,7 @@ global.en_x = 0;
 global.en_y = 0;
 
 global.try = 1;
+global.no_hit_mode = false;
 
 audio_master_gain(0.20)
 

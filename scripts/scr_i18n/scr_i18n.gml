@@ -6,6 +6,7 @@ function scr_i18n_rus_original() {
         },
         menu: {
             play: "Играть",
+            noHitMode: "Режим 1HP",
             volume: "Звук",
             fullscreen: "Полный экран",
             language: "Язык",
@@ -129,6 +130,7 @@ function scr_i18n_eng() {
         },
         menu: {
             play: "Play",
+            noHitMode: "1HP mode",
             volume: "Volume",
             fullscreen: "Fullscreen",
             language: "Language",

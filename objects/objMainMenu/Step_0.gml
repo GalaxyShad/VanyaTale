@@ -11,6 +11,12 @@ if (pos < 0) pos = maxPos;
 if (pos > maxPos) pos = 0;
 
 if (pos == 1) {
+    if (keyboard_check_pressed(vk_right) || keyboard_check_pressed(vk_left)) {
+        global.no_hit_mode = !global.no_hit_mode
+    }
+}
+
+if (pos == 2) {
     if (keyboard_check(vk_right) && global.tick % 3 == 0) {
         audio_master_gain(audio_get_master_gain(0) + 0.01);
     }
@@ -22,13 +28,13 @@ if (pos == 1) {
     if (audio_get_master_gain(0) < 0) audio_master_gain(0);
 }
 
-if (pos == 2) {
+if (pos == 3) {
     if (keyboard_check_pressed(vk_right) || keyboard_check_pressed(vk_left)) {
         window_set_fullscreen(!window_get_fullscreen());
     }
 }
 
-if (pos == 3) {
+if (pos == 4) {
     if (keyboard_check_pressed(vk_right) || keyboard_check_pressed(vk_left)) {
         scr_i18n_lang_switch()
     }
